@@ -17,6 +17,8 @@
 		52C4235A25A0FE4A00FDBD38 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C4235925A0FE4A00FDBD38 /* ComplicationController.swift */; };
 		52C4235C25A0FE4B00FDBD38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C4235B25A0FE4B00FDBD38 /* Assets.xcassets */; };
 		52C4235F25A0FE4B00FDBD38 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C4235E25A0FE4B00FDBD38 /* Preview Assets.xcassets */; };
+		52C4237325A0FF4200FDBD38 /* Contraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C4237225A0FF4200FDBD38 /* Contraction.swift */; };
+		52C4237E25A0FFF800FDBD38 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C4237D25A0FFF800FDBD38 /* TimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		52C4235E25A0FE4B00FDBD38 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		52C4236025A0FE4B00FDBD38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52C4236125A0FE4B00FDBD38 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		52C4237225A0FF4200FDBD38 /* Contraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contraction.swift; sourceTree = "<group>"; };
+		52C4237D25A0FFF800FDBD38 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 			children = (
 				52C4235125A0FE4A00FDBD38 /* ContracoesApp.swift */,
 				52C4235325A0FE4A00FDBD38 /* ContentView.swift */,
+				52C4237D25A0FFF800FDBD38 /* TimerView.swift */,
 				52C4235525A0FE4A00FDBD38 /* NotificationController.swift */,
 				52C4235725A0FE4A00FDBD38 /* NotificationView.swift */,
 				52C4235925A0FE4A00FDBD38 /* ComplicationController.swift */,
@@ -129,6 +134,7 @@
 				52C4236025A0FE4B00FDBD38 /* Info.plist */,
 				52C4236125A0FE4B00FDBD38 /* PushNotificationPayload.apns */,
 				52C4235D25A0FE4B00FDBD38 /* Preview Content */,
+				52C4237225A0FF4200FDBD38 /* Contraction.swift */,
 			);
 			path = "Contracoes WatchKit Extension";
 			sourceTree = "<group>";
@@ -267,7 +273,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C4237325A0FF4200FDBD38 /* Contraction.swift in Sources */,
 				52C4235625A0FE4A00FDBD38 /* NotificationController.swift in Sources */,
+				52C4237E25A0FFF800FDBD38 /* TimerView.swift in Sources */,
 				52C4235425A0FE4A00FDBD38 /* ContentView.swift in Sources */,
 				52C4235A25A0FE4A00FDBD38 /* ComplicationController.swift in Sources */,
 				52C4235225A0FE4A00FDBD38 /* ContracoesApp.swift in Sources */,
