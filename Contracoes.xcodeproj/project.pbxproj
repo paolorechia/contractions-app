@@ -84,7 +84,7 @@
 		52C4234725A0FE4A00FDBD38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52C4234C25A0FE4A00FDBD38 /* Contracoes WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Contracoes WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C4235125A0FE4A00FDBD38 /* ContracoesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContracoesApp.swift; sourceTree = "<group>"; };
-		52C4235325A0FE4A00FDBD38 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		52C4235325A0FE4A00FDBD38 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; usesTabs = 0; wrapsLines = 1; };
 		52C4235525A0FE4A00FDBD38 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		52C4235725A0FE4A00FDBD38 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		52C4235925A0FE4A00FDBD38 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };

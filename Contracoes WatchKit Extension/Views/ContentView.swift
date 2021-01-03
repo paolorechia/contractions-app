@@ -11,8 +11,12 @@ struct ContentView: View {
     @EnvironmentObject var dataModel: DataModel;
     var body: some View {
         VStack {
-            HistoryUI()
-                .environmentObject(dataModel)
+            HStack {
+                HistoryUI()
+                    .environmentObject(dataModel)
+                    .frame(width: 115, height: 180, alignment: .leading)
+                    .font(.caption)
+            }
             TimerUI()
                 .environmentObject(dataModel)
         }

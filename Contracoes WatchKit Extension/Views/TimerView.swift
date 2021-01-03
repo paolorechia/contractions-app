@@ -19,17 +19,7 @@ struct TimerUI: View {
     @State private var endDate: Date? = nil
 
     var body: some View {
-        VStack {
-            Text(String(elapsedSeconds))
-                .font(.title)
-                .onReceive(timer) { time in
-                    if isCounting {
-                        self.elapsedSeconds += 1
-                    }
-                }
-
-            Spacer()
-
+        HStack {
             Button(action: {
                 toggleTimer()
             })
@@ -41,6 +31,17 @@ struct TimerUI: View {
                 }
             }
             .background(buttonColor)
+            .frame(width: 90, height: 30, alignment: .center)
+            .cornerRadius(9)
+                        
+            Text(String(elapsedSeconds))
+                .font(.title2)
+                .onReceive(timer) { time in
+                    if isCounting {
+                        self.elapsedSeconds += 1
+                    }
+                }
+                .frame(width: 50, height: 30)
         }
     }
     
