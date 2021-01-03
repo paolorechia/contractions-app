@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Contraction: Decodable, Identifiable {
+struct Contraction: Codable, Identifiable {
     var id: Int
     var start: Date
     var end: Date
