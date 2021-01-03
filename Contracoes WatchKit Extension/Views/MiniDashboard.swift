@@ -10,23 +10,21 @@ import SwiftUI
 struct MiniDashboard: View {
     var body: some View {
         VStack {
-            HStack {
-                Image(systemName: "sum")
+            VStack {
+                Image(systemName: "c.circle.fill")
                 Text("3")
             }
-            .padding()
             VStack {
-                Image(systemName: "minus.circle")
+                Image(systemName: "d.circle.fill")
                 Text("34")
             }
-            .padding()
             VStack {
-                Image(systemName: "divide.circle")
+                Image(systemName: "i.circle.fill")
                 Text("123")
             }
-            .padding()
         }
         .background(Color.blue)
+        .cornerRadius(8.0)
     }
 }
 

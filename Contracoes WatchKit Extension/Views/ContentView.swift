@@ -14,18 +14,13 @@ struct ContentView: View {
             HStack {
                 HistoryUI()
                     .environmentObject(dataModel)
-                    .frame(width: 125, height: 145, alignment: .leading)
+                    .frame(width: 115, height: 135, alignment: .leading)
                     .font(.caption)
                 VStack {
                     NavigationView {
                         NavigationLink(destination: Dashboard()) {
-                            Image(systemName: "info.circle")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 30, height: 100)
-                                .background(Color.blue)
-                                .cornerRadius(8.0)
-                                .offset(x: 0, y: 20)
+                                MiniDashboard()
+                                    .frame(width: 35, height: 135)
                         }
                     }
                 }
@@ -34,7 +29,6 @@ struct ContentView: View {
             .environmentObject(dataModel)
         }
     }
-    
     func placeholder() {
         
     }
@@ -46,7 +40,7 @@ struct ContentView_Previews: PreviewProvider {
             ContentView()
                 .environmentObject(DataModel())
             ContentView()
-                .previewDevice("Apple Watch Series 6 - 40mm")
+                .previewDevice("Apple Watch Series 5 - 40mm")
                 .environmentObject(DataModel())
         }
     }
