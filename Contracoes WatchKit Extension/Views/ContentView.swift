@@ -19,12 +19,22 @@ struct ContentView: View {
                         .frame(width: 115, height: 135, alignment: .leading)
                         .font(.caption)
                     VStack {
-                        NavigationLink(destination: Dashboard(recentContractions: dataModel.recentContractions, averageDuration: dataModel.averageDuration, averageInterval: dataModel.averageInterval)) {
-                                    MiniDashboard(recentContractions: dataModel.recentContractions, averageDuration: dataModel.averageDuration, averageInterval: dataModel.averageInterval)
-                                        .frame(width: 35, height: 115)
-                            }
+                        NavigationLink(
+                            destination: Dashboard(
+                                recentContractions: dataModel.recentContractions,
+                                averageDuration: dataModel.averageDuration,
+                                averageInterval: dataModel.averageInterval)
+                        )
+                         {
+                                MiniDashboard(
+                                    recentContractions: dataModel.recentContractions,
+                                    averageDuration: dataModel.averageDuration,
+                                    averageInterval: dataModel.averageInterval)
+                                    .frame(width: 35, height: 115)
                         }
+                        .buttonStyle(PlainButtonStyle())
                     }
+                }
                 TimerUI()
                     .environmentObject(dataModel)
             }

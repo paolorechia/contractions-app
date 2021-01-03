@@ -11,7 +11,6 @@ import Combine
 final class DataModel: ObservableObject {
     static let OBSERVATION_PERIOD_IN_MINUTES: Double = 10.0
     static let TIME_FILTER_IN_SECONDS: Double = 60 * 60 * OBSERVATION_PERIOD_IN_MINUTES
-    static let NUMBER_OF_CONTRACTIONS_FOR_ALERT: Int = 3
     static let AVERAGE_DURATION_IN_SECONDS_FOR_ALERT: Int = 30
     static let MAX_RELEVANT_CONTRACTIONS: Int = 3
     
@@ -25,6 +24,7 @@ final class DataModel: ObservableObject {
     @Published var averageInterval: Int = 0
     
     @Published var showAlert: Bool = false
+    @Published var alertHasBeenShown: Bool = false
 
     func saveContraction(_ contraction: Contraction) {
         history.append(contraction)
@@ -64,12 +64,18 @@ final class DataModel: ObservableObject {
         }
         
         // Update published vars
-        recentContractions = historySlice.count
+        recentContractions = recentHistory.count
         averageDuration = totalDuration / recentContractions
         averageInterval = Int(totalIntervals / Double(recentContractions)) / 60
         
-        showAlert = (recentContractions >= DataModel.NUMBER_OF_CONTRACTIONS_FOR_ALERT &&
-                        averageDuration > DataModel.AVERAGE_DURATION_IN_SECONDS_FOR_ALERT)
+        showAlert = (
+            !alertHasBeenShown &&
+            recentContractions >= DataModel.MAX_RELEVANT_CONTRACTIONS &&
+            averageDuration > DataModel.AVERAGE_DURATION_IN_SECONDS_FOR_ALERT
+        )
+        if (showAlert) {
+            alertHasBeenShown = true
+        }
     }
 }
 
