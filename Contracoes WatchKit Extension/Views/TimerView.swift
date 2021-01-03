@@ -55,7 +55,7 @@ struct TimerUI: View {
             buttonColor = Color.green
             self.endDate = Date()
             let newContraction = Contraction(
-                    id: dataModel.currentId,
+                id: dataModel.currentId.value,
                     start: self.startDate!,
                     end: self.endDate!,
                     durationInSeconds: self.elapsedSeconds

@@ -10,12 +10,13 @@ import Combine
 
 final class DataModel: ObservableObject {
     @Published var history: [Contraction] = load("history.json")
-    @Published var currentId: Int = 0
+    @Published var currentId: CurrentId = load("currentId.json")
     
     func saveContraction(_ contraction: Contraction) {
         history.append(contraction)
-        currentId += 1
-        save("history.json", history: history)
+        currentId.value += 1
+        saveArray("history.json", history: history)
+        saveObject("currentId.json", currentId: currentId)
     }
 }
 
@@ -41,7 +42,7 @@ func load<T: Decodable>(_ filename: String) -> T {
 }
 
 
-func save<T: Codable>(_ filename: String, history: [T]) {
+func saveArray<T: Codable>(_ filename: String, history: [T]) {
     var data: Data
     guard let file = Bundle.main.url(forResource: filename, withExtension: nil) else {
         fatalError("Couldn't find bundle with \(filename)")
@@ -58,6 +59,23 @@ func save<T: Codable>(_ filename: String, history: [T]) {
     } catch {
         fatalError("Could not write to Bundle File.")
     }
-    
-    
+}
+
+func saveObject<T: Codable>(_ filename: String, currentId: T) {
+    var data: Data
+    guard let file = Bundle.main.url(forResource: filename, withExtension: nil) else {
+        fatalError("Couldn't find bundle with \(filename)")
+    }
+
+    do {
+        data = try JSONEncoder().encode(currentId)
+    } catch {
+        fatalError("NOOOO")
+    }
+
+    do {
+        try data.write(to: file)
+    } catch {
+        fatalError("Could not write to Bundle File.")
+    }
 }
