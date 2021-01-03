@@ -17,15 +17,17 @@ struct ContentView: View {
                     .frame(width: 125, height: 145, alignment: .leading)
                     .font(.caption)
                 VStack {
-                    Button(action: placeholder) {
-                        Image(systemName: "info.circle")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
+                    NavigationView {
+                        NavigationLink(destination: Dashboard()) {
+                            Image(systemName: "info.circle")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30, height: 100)
+                                .background(Color.blue)
+                                .cornerRadius(8.0)
+                                .offset(x: 0, y: 20)
+                        }
                     }
-                    .frame(width: 30, height: 100)
-                    .background(Color.blue)
-                    .cornerRadius(8.0)
-                    .offset(x: 0, y: 20)
                 }
             }
         TimerUI()
