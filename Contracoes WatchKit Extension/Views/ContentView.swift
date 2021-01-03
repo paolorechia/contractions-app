@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var dataModel: DataModel;
+
     var body: some View {
         NavigationView {
             VStack {
@@ -29,9 +30,12 @@ struct ContentView: View {
             }
         }
         .navigationTitle("Contractions")
-    }
-    func placeholder() {
-        
+        .alert(isPresented: $dataModel.showAlert) {
+            Alert(
+            title: Text("Your contractions are intense!"),
+            message: Text("Go to the hospital!"),
+            dismissButton: .default(Text("OK")))
+        }
     }
 }
 
