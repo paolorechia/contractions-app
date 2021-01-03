@@ -15,10 +15,6 @@ struct MiniDashboard: View {
     var body: some View {
         VStack {
             VStack {
-                Image(systemName: "c.circle.fill")
-                Text(String(recentContractions))
-            }
-            VStack {
                 Image(systemName: "d.circle.fill")
                 Text(String(averageDuration))
             }

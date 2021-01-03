@@ -14,22 +14,18 @@ struct Dashboard: View {
 
     var body: some View {
         VStack {
-            HStack {
-                Text("Recent Contractions")
+            VStack {
+                Text("Average duration of last 3 contractions")
                     .font(.footnote)
-                Text(String(recentContractions))
+                Spacer()
+                Text("\(averageDuration) seconds")
+                
             }
             .padding()
-            HStack {
-                Text("Average Duration")
-                    .font(.footnote)
-                Text("\(averageDuration)s")
-            }
-            .padding()
-            HStack {
+            VStack {
                 Text("Average Interval")
                     .font(.footnote)
-                Text("\(averageInterval)m")
+                Text("\(averageInterval) minutes")
             }
             .padding()
         }

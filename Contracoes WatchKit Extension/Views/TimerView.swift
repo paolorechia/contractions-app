@@ -31,7 +31,7 @@ struct TimerUI: View {
                 }
             }
             .background(buttonColor)
-            .frame(width: 90, height: 23, alignment: .center)
+            .frame(width: 90, height: 35, alignment: .center)
             .cornerRadius(9)
                         
             Text("\(elapsedSeconds)")
@@ -41,7 +41,7 @@ struct TimerUI: View {
                         self.elapsedSeconds += 1
                     }
                 }
-                .frame(width: 60, height: 23)
+                .frame(width: 60, height: 35)
         }
     }
     

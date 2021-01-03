@@ -16,7 +16,7 @@ struct ContentView: View {
                 HStack {
                     HistoryUI()
                         .environmentObject(dataModel)
-                        .frame(width: 115, height: 135, alignment: .leading)
+                        .frame(width: 130, height: 135, alignment: .leading)
                         .font(.caption)
                     VStack {
                         NavigationLink(
@@ -30,7 +30,7 @@ struct ContentView: View {
                                     recentContractions: dataModel.recentContractions,
                                     averageDuration: dataModel.averageDuration,
                                     averageInterval: dataModel.averageInterval)
-                                    .frame(width: 35, height: 115)
+                                    .frame(width: 30, height: 115)
                         }
                         .buttonStyle(PlainButtonStyle())
                     }
@@ -42,7 +42,7 @@ struct ContentView: View {
         .navigationTitle("Contractions")
         .alert(isPresented: $dataModel.showAlert) {
             Alert(
-            title: Text("Your contractions are intense!"),
+            title: Text("You are in active labour!"),
             message: Text("Go to the hospital!"),
             dismissButton: .default(Text("OK")))
         }
