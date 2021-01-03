@@ -10,24 +10,25 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var dataModel: DataModel;
     var body: some View {
-        VStack {
-            HStack {
-                HistoryUI()
-                    .environmentObject(dataModel)
-                    .frame(width: 115, height: 135, alignment: .leading)
-                    .font(.caption)
-                VStack {
-                    NavigationView {
-                        NavigationLink(destination: Dashboard()) {
-                                MiniDashboard()
-                                    .frame(width: 35, height: 135)
+        NavigationView {
+            VStack {
+                HStack {
+                    HistoryUI()
+                        .environmentObject(dataModel)
+                        .frame(width: 115, height: 135, alignment: .leading)
+                        .font(.caption)
+                    VStack {
+                            NavigationLink(destination: Dashboard()) {
+                                    MiniDashboard()
+                                        .frame(width: 35, height: 135)
+                            }
                         }
                     }
                 }
-            }
-        TimerUI()
-            .environmentObject(dataModel)
+            TimerUI()
+                .environmentObject(dataModel)
         }
+        .navigationViewStyle(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=Navigation View Style@*/DefaultNavigationViewStyle()/*@END_MENU_TOKEN@*/)
     }
     func placeholder() {
         
