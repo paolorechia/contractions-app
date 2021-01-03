@@ -14,18 +14,35 @@ struct ContentView: View {
             HStack {
                 HistoryUI()
                     .environmentObject(dataModel)
-                    .frame(width: 115, height: 180, alignment: .leading)
+                    .frame(width: 125, height: 145, alignment: .leading)
                     .font(.caption)
+                VStack {
+                    Button(action: placeholder) {
+                        Image(systemName: "info.circle")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }
+                    .background(Color.blue)
+                }
             }
-            TimerUI()
-                .environmentObject(dataModel)
+        TimerUI()
+            .environmentObject(dataModel)
         }
+    }
+    
+    func placeholder() {
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-            .environmentObject(DataModel())
+        Group {
+            ContentView()
+                .environmentObject(DataModel())
+            ContentView()
+                .previewDevice("Apple Watch Series 6 - 40mm")
+                .environmentObject(DataModel())
+        }
     }
 }

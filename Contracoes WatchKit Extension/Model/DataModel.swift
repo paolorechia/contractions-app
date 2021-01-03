@@ -13,7 +13,7 @@ final class DataModel: ObservableObject {
     @Published var currentId: CurrentId = load("currentId.json")
     
     func saveContraction(_ contraction: Contraction) {
-        history.append(contraction)
+        history.insert(contraction, at: 0)
         currentId.value += 1
         saveArray("history.json", history: history)
         saveObject("currentId.json", currentId: currentId)

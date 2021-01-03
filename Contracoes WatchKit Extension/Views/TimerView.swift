@@ -34,14 +34,14 @@ struct TimerUI: View {
             .frame(width: 90, height: 30, alignment: .center)
             .cornerRadius(9)
                         
-            Text(String(elapsedSeconds))
+            Text("\(elapsedSeconds)")
                 .font(.title2)
                 .onReceive(timer) { time in
                     if isCounting {
                         self.elapsedSeconds += 1
                     }
                 }
-                .frame(width: 50, height: 30)
+                .frame(width: 60, height: 30)
         }
     }
     
