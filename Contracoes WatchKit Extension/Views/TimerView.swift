@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct TimerUI: View {
+    @EnvironmentObject var dataModel: DataModel
     @State private var elapsedSeconds: Int = 0
     @State private var isCounting: Bool = false
     @State private var buttonColor: Color = Color.green
@@ -53,6 +54,13 @@ struct TimerUI: View {
         } else {
             buttonColor = Color.green
             self.endDate = Date()
+            let newContraction = Contraction(
+                    id: 0,
+                    start: self.startDate!,
+                    end: self.endDate!,
+                    durationInSeconds: self.elapsedSeconds
+                )
+            dataModel.history.append(newContraction)
         }
     }
 }
