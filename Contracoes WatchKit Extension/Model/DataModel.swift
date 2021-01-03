@@ -37,8 +37,15 @@ final class DataModel: ObservableObject {
                 recentHistory.append(hist)
             }
         }
+        var i = 1
+        var totalIntervals = 0.0
+        while i < recentHistory.count {
+            totalIntervals += abs(recentHistory[i].start.timeIntervalSince(recentHistory[i-1].end))
+            i += 1
+        }
         recentContractions = recentHistory.count
         averageDuration = totalDuration / recentContractions
+        averageInterval = Int(totalIntervals / Double(recentContractions)) / 60
     }
 }
 

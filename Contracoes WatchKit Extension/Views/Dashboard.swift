@@ -23,13 +23,13 @@ struct Dashboard: View {
             HStack {
                 Text("Average Duration")
                     .font(.footnote)
-                Text(String(averageDuration))
+                Text("\(averageDuration)s")
             }
             .padding()
             HStack {
                 Text("Average Interval")
                     .font(.footnote)
-                Text(String(averageInterval))
+                Text("\(averageInterval)m")
             }
             .padding()
         }
