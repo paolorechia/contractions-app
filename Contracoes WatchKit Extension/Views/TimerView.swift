@@ -62,6 +62,7 @@ struct TimerUI: View {
                     durationInSeconds: self.elapsedSeconds
                 )
             dataModel.saveContraction(newContraction)
+            dataModel.updateDash()
         }
     }
 }

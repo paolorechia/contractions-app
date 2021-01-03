@@ -8,25 +8,28 @@
 import SwiftUI
 
 struct Dashboard: View {
+    let recentContractions: Int;
+    let averageDuration: Int;
+    let averageInterval: Int;
+
     var body: some View {
         VStack {
             HStack {
                 Text("Recent Contractions")
                     .font(.footnote)
-                Text("3")
+                Text(String(recentContractions))
             }
             .padding()
             HStack {
                 Text("Average Duration")
                     .font(.footnote)
-
-                Text("34")
+                Text(String(averageDuration))
             }
             .padding()
             HStack {
                 Text("Average Interval")
                     .font(.footnote)
-                Text("123")
+                Text(String(averageInterval))
             }
             .padding()
         }
@@ -37,7 +40,11 @@ struct Dashboard: View {
 
 struct Dashboard_Previews: PreviewProvider {
     static var previews: some View {
-        Dashboard()
+        Dashboard(
+            recentContractions: 0,
+            averageDuration: 0,
+            averageInterval: 0
+        )
             .previewDevice("Apple Watch Series 5 - 40mm")
     }
 }

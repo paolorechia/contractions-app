@@ -9,14 +9,36 @@ import Foundation
 import Combine
 
 final class DataModel: ObservableObject {
+    static let TIME_FILTER_IN_SECONDS: Double = 60 * 60 * 30
+    
     @Published var history: [Contraction] = load("history.json")
     @Published var currentId: CurrentId = load("currentId.json")
     
+    @Published var recentHistory: [Contraction] = []
+    @Published var recentContractions: Int = 0
+    @Published var averageDuration: Int = 0
+    @Published var averageInterval: Int = 0
+
     func saveContraction(_ contraction: Contraction) {
         history.append(contraction)
         currentId.value += 1
         saveArray("history.json", history: history)
         saveObject("currentId.json", currentId: currentId)
+    }
+    
+    func updateDash() {
+        let now = Date()
+        var totalDuration = 0
+        var recentHistory: [Contraction] = []
+        for hist in history {
+            let timeDifferenceInSeconds = abs(hist.start.timeIntervalSince(now))
+            if (timeDifferenceInSeconds < DataModel.TIME_FILTER_IN_SECONDS) {
+                totalDuration += hist.durationInSeconds
+                recentHistory.append(hist)
+            }
+        }
+        recentContractions = recentHistory.count
+        averageDuration = totalDuration / recentContractions
     }
 }
 
