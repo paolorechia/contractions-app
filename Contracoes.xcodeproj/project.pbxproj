@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		524BB44A25A14DB30036BB36 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524BB44925A14DB30036BB36 /* DataModel.swift */; };
+		524BB45925A14E2F0036BB36 /* history.json in Resources */ = {isa = PBXBuildFile; fileRef = 524BB45825A14E2F0036BB36 /* history.json */; };
+		524BB45E25A156270036BB36 /* HistoryUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524BB45D25A156270036BB36 /* HistoryUI.swift */; };
+		524BB46825A159DC0036BB36 /* HistoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524BB46725A159DC0036BB36 /* HistoryRowView.swift */; };
+		524BB46E25A15ED10036BB36 /* HistoryFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524BB46D25A15ED10036BB36 /* HistoryFormatter.swift */; };
 		52C4234125A0FE4800FDBD38 /* Contracoes WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 52C4234025A0FE4800FDBD38 /* Contracoes WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		52C4234625A0FE4A00FDBD38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C4234525A0FE4A00FDBD38 /* Assets.xcassets */; };
 		52C4234D25A0FE4A00FDBD38 /* Contracoes WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52C4234C25A0FE4A00FDBD38 /* Contracoes WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -64,6 +69,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		524BB44925A14DB30036BB36 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		524BB45825A14E2F0036BB36 /* history.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = history.json; sourceTree = "<group>"; };
+		524BB45D25A156270036BB36 /* HistoryUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryUI.swift; sourceTree = "<group>"; };
+		524BB46725A159DC0036BB36 /* HistoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRowView.swift; sourceTree = "<group>"; };
+		524BB46D25A15ED10036BB36 /* HistoryFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryFormatter.swift; sourceTree = "<group>"; };
 		52C4233C25A0FE4800FDBD38 /* Contracoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contracoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C4234025A0FE4800FDBD38 /* Contracoes WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Contracoes WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C4234525A0FE4A00FDBD38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,6 +103,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		524BB44825A14DA10036BB36 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				52C4237225A0FF4200FDBD38 /* Contraction.swift */,
+				524BB44925A14DB30036BB36 /* DataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		524BB44E25A14DC70036BB36 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				524BB45825A14E2F0036BB36 /* history.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		524BB46225A156450036BB36 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				524BB45D25A156270036BB36 /* HistoryUI.swift */,
+				52C4235325A0FE4A00FDBD38 /* ContentView.swift */,
+				52C4237D25A0FFF800FDBD38 /* TimerView.swift */,
+				52C4235725A0FE4A00FDBD38 /* NotificationView.swift */,
+				524BB46725A159DC0036BB36 /* HistoryRowView.swift */,
+				524BB46C25A15EC30036BB36 /* Helpers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		524BB46325A1564C0036BB36 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				52C4235525A0FE4A00FDBD38 /* NotificationController.swift */,
+				52C4235925A0FE4A00FDBD38 /* ComplicationController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		524BB46C25A15EC30036BB36 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				524BB46D25A15ED10036BB36 /* HistoryFormatter.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		52C4233525A0FE4800FDBD38 = {
 			isa = PBXGroup;
 			children = (
@@ -124,17 +181,15 @@
 		52C4235025A0FE4A00FDBD38 /* Contracoes WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				524BB46325A1564C0036BB36 /* Controllers */,
+				524BB44E25A14DC70036BB36 /* Resources */,
+				524BB44825A14DA10036BB36 /* Model */,
 				52C4235125A0FE4A00FDBD38 /* ContracoesApp.swift */,
-				52C4235325A0FE4A00FDBD38 /* ContentView.swift */,
-				52C4237D25A0FFF800FDBD38 /* TimerView.swift */,
-				52C4235525A0FE4A00FDBD38 /* NotificationController.swift */,
-				52C4235725A0FE4A00FDBD38 /* NotificationView.swift */,
-				52C4235925A0FE4A00FDBD38 /* ComplicationController.swift */,
+				524BB46225A156450036BB36 /* Views */,
 				52C4235B25A0FE4B00FDBD38 /* Assets.xcassets */,
 				52C4236025A0FE4B00FDBD38 /* Info.plist */,
 				52C4236125A0FE4B00FDBD38 /* PushNotificationPayload.apns */,
 				52C4235D25A0FE4B00FDBD38 /* Preview Content */,
-				52C4237225A0FF4200FDBD38 /* Contraction.swift */,
 			);
 			path = "Contracoes WatchKit Extension";
 			sourceTree = "<group>";
@@ -262,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52C4235F25A0FE4B00FDBD38 /* Preview Assets.xcassets in Resources */,
+				524BB45925A14E2F0036BB36 /* history.json in Resources */,
 				52C4235C25A0FE4B00FDBD38 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,12 +329,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				524BB45E25A156270036BB36 /* HistoryUI.swift in Sources */,
 				52C4237325A0FF4200FDBD38 /* Contraction.swift in Sources */,
 				52C4235625A0FE4A00FDBD38 /* NotificationController.swift in Sources */,
+				524BB46E25A15ED10036BB36 /* HistoryFormatter.swift in Sources */,
 				52C4237E25A0FFF800FDBD38 /* TimerView.swift in Sources */,
 				52C4235425A0FE4A00FDBD38 /* ContentView.swift in Sources */,
 				52C4235A25A0FE4A00FDBD38 /* ComplicationController.swift in Sources */,
+				524BB44A25A14DB30036BB36 /* DataModel.swift in Sources */,
 				52C4235225A0FE4A00FDBD38 /* ContracoesApp.swift in Sources */,
+				524BB46825A159DC0036BB36 /* HistoryRowView.swift in Sources */,
 				52C4235825A0FE4A00FDBD38 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

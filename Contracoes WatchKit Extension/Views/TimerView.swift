@@ -13,25 +13,12 @@ struct TimerUI: View {
     @State private var isCounting: Bool = false
     @State private var buttonColor: Color = Color.green
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
-    let dateFormatterPrint = DateFormatter()
 
     @State private var startDate: Date? = nil
     @State private var endDate: Date? = nil
 
     var body: some View {
         VStack {
-            HStack {
-                if startDate != nil {
-                    Text(dateFormatterPrint.string(from: startDate!))
-                }
-                
-                if endDate != nil {
-                    Text(dateFormatterPrint.string(from: endDate!))
-                }
-            }
-
-
             Text(String(elapsedSeconds))
                 .font(.title)
                 .onReceive(timer) { time in
@@ -39,7 +26,9 @@ struct TimerUI: View {
                         self.elapsedSeconds += 1
                     }
                 }
+
             Spacer()
+
             Button(action: {
                 toggleTimer()
             })
@@ -51,17 +40,11 @@ struct TimerUI: View {
                 }
             }
             .background(buttonColor)
-        }.onAppear(
-        perform: initFormatter
-        )
+        }
     }
     
-    private func initFormatter() {
-        dateFormatterPrint.dateFormat = "HH:mm:ss"
-    }
-    
+
     private func toggleTimer() {
-        print("Toggle timer")
         self.isCounting = !self.isCounting
         if (self.isCounting) {
             buttonColor = Color.red

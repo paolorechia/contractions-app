@@ -9,13 +9,14 @@ import SwiftUI
 
 @main
 struct ContracoesApp: App {
+    @StateObject var dataModel = DataModel()
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
                 ContentView()
+                    .environmentObject(dataModel)
             }
         }
-
         WKNotificationScene(controller: NotificationController.self, category: "myCategory")
     }
 }
