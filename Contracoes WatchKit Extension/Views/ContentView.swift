@@ -22,7 +22,10 @@ struct ContentView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                     }
+                    .frame(width: 30, height: 100)
                     .background(Color.blue)
+                    .cornerRadius(8.0)
+                    .offset(x: 0, y: 20)
                 }
             }
         TimerUI()

@@ -10,7 +10,7 @@ import SwiftUI
 struct HistoryUI: View {
     @EnvironmentObject var dataModel: DataModel
     var body: some View {
-            List(dataModel.history) { contraction in
+        List(dataModel.history.reversed()) { contraction in
                 HistoryRowView(formatter: historyDateFormatter(), contraction: contraction)
             }
     }
