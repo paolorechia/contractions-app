@@ -10,6 +10,12 @@ import Combine
 
 final class DataModel: ObservableObject {
     @Published var history: [Contraction] = load("history.json")
+    @Published var currentId: Int = 0
+    
+    func saveContraction(_ contraction: Contraction) {
+        history.append(contraction)
+        currentId += 1
+    }
 }
 
 func load<T: Decodable>(_ filename: String) -> T {
