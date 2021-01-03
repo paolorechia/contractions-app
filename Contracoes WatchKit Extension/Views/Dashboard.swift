@@ -31,6 +31,7 @@ struct Dashboard: View {
             .padding()
         }
         .background(Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 0.10))
+        .navigationTitle("Info")
     }
 }
 

@@ -24,11 +24,11 @@ struct ContentView: View {
                             }
                         }
                     }
-                }
-            TimerUI()
-                .environmentObject(dataModel)
+                TimerUI()
+                    .environmentObject(dataModel)
+            }
         }
-        .navigationViewStyle(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=Navigation View Style@*/DefaultNavigationViewStyle()/*@END_MENU_TOKEN@*/)
+        .navigationTitle("Contractions")
     }
     func placeholder() {
         
